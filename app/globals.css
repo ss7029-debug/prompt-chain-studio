@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --background: #F5D5DF;
+  --foreground: #593B32;
+  --surface: #FFF8EE;
+  --field: #FFFFFF;
+  --muted: #765044;
+  --subtle: #805756;
+  --accent: #86515F;
+  --line: #D9B8AE;
+  --strong-line: #A46B7C;
+  --primary: #593B32;
+  --primary-hover: #765044;
+  --on-primary: #FFF8EE;
+  --ring: #A46B7C;
+  --danger: #B91C1C;
+  --danger-line: #FCA5A5;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #211820;
+  --foreground: #F6E8EA;
+  --surface: #30232C;
+  --field: #261C23;
+  --muted: #D5BCC4;
+  --subtle: #BFA4AE;
+  --accent: #E2ACBF;
+  --line: #765965;
+  --strong-line: #B88A9D;
+  --primary: #E8B6C8;
+  --primary-hover: #F3CDD9;
+  --on-primary: #281C26;
+  --ring: #E2ACBF;
+  --danger: #FFB4B4;
+  --danger-line: #A96678;
+}
+
+/* No JavaScript is needed for live OS changes or the initial System palette. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    color-scheme: dark;
+    --background: #211820;
+    --foreground: #F6E8EA;
+    --surface: #30232C;
+    --field: #261C23;
+    --muted: #D5BCC4;
+    --subtle: #BFA4AE;
+    --accent: #E2ACBF;
+    --line: #765965;
+    --strong-line: #B88A9D;
+    --primary: #E8B6C8;
+    --primary-hover: #F3CDD9;
+    --on-primary: #281C26;
+    --ring: #E2ACBF;
+    --danger: #FFB4B4;
+    --danger-line: #A96678;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-page: var(--background);
+  --color-ink: var(--foreground);
+  --color-surface: var(--surface);
+  --color-field: var(--field);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-accent: var(--accent);
+  --color-line: var(--line);
+  --color-strong-line: var(--strong-line);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-on-primary: var(--on-primary);
+  --color-ring: var(--ring);
+  --color-danger: var(--danger);
+  --color-danger-line: var(--danger-line);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--subtle);
+  opacity: 1;
+}
